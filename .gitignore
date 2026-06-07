@@ -141,3 +141,14 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# React Native Android
+android/.gradle/
+android/build/
+android/app/build/
+android/app/.cxx/
+
+# Local Android config
+android/local.properties
+
+# Firebase
+android/app/google-services.json
