@@ -1,10 +1,25 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Button} from 'react-native';
+import {signInWithGoogle} from '../services/authService';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}: any) {
   return (
     <View>
-      <Text>Login Screen</Text>
+      
+      <Button
+        title="Sign In With Google"
+        onPress={async () => {
+          try {
+            const user = await signInWithGoogle();
+
+            console.log(user.user.email);
+
+            navigation.navigate('Profile');
+          } catch (error) {
+            console.log(error);
+          }
+        }}
+      />
     </View>
   );
 }
